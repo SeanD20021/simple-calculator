@@ -41,10 +41,10 @@ percent.addEventListener("click", () => {
     if (Number(display.textContent) !== 0) {
         if (num2 === null) {
             num1 = num1 / 100;
-            if (String(num1).length > 20) {
+            if (String(num1).length > 15) {
                 if (String(num1).includes(".")) {
                     let index = String(num1).indexOf(".");
-                    if (index > 15) {
+                    if (index > 12) {
                         num1 = null;
                         num2 = null;
                         operator = null;
@@ -65,10 +65,10 @@ percent.addEventListener("click", () => {
         } else {
             num2 = num2 / 100;
 
-            if (String(num2).length > 20) {
+            if (String(num2).length > 15) {
                 if (String(num2).includes(".")) {
                     let index = String(num2).indexOf(".");
-                    if (index > 15) {
+                    if (index > 12) {
                         num1 = null;
                         num2 = null;
                         operator = null;
@@ -97,13 +97,13 @@ decimal.addEventListener("click", () => {
             } else if (equalLastButtonPushed && operator == null && num2 == null) {
                 display.textContent= "0.";
                 num1 = Number("0.0");
-            }else if(!display.textContent.includes(".") && display.textContent.length < 20 && num1 !== null && operator === null) {
+            }else if(!display.textContent.includes(".") && display.textContent.length < 15 && num1 !== null && operator === null) {
                 display.textContent = display.textContent + decimal.textContent;
                 num1 = Number(display.textContent);
             } else if(operator !== null && num2 === null) {
                 display.textContent = "0."
                 num2 = Number("0.0");
-            } else if (!display.textContent.includes(".") && display.textContent.length < 20 && num2 !== null) {
+            } else if (!display.textContent.includes(".") && display.textContent.length < 15 && num2 !== null) {
                 display.textContent = display.textContent + decimal.textContent;
                 num2 = Number(display.textContent);
             }
@@ -129,13 +129,13 @@ for (let button of buttons) {
             } else if (equalLastButtonPushed && operator == null && num2 == null) {
                 display.textContent= button.textContent;
                 num1 = Number(button.textContent);
-            } else if(display.textContent.length < 20 && num1 !== null && operator === null) {
+            } else if(display.textContent.length < 15 && num1 !== null && operator === null) {
                 display.textContent = display.textContent + button.textContent;
                 num1 = Number(display.textContent);
             } else if(operator !== null && num2 === null) {
                 display.textContent = button.textContent;
                 num2 = Number(display.textContent);
-            } else if (display.textContent.length < 20 && num2 !== null) {
+            } else if (display.textContent.length < 15 && num2 !== null) {
                 display.textContent = display.textContent + button.textContent;
                 num2 = Number(display.textContent);
             }
@@ -156,10 +156,10 @@ for(let op of operations) {
             console.log(num2);
             console.log(operator);
             let result = operate(num1, num2, operator);
-            if (String(result).length > 20) {
+            if (String(result).length > 15) {
                 if (String(result).includes(".")) {
                     let index = String(result).indexOf(".");
-                    if (index > 15) {
+                    if (index > 12) {
                         num1 = null;
                         num2 = null;
                         operator = null;
@@ -199,10 +199,10 @@ equal.addEventListener("click", () => {
             console.log(num2);
             console.log(operator);
         let result = operate(num1, num2, operator);
-        if (String(result).length > 20) {
+        if (String(result).length > 15 ) {
             if (String(result).includes(".")) {
                 let index = String(result).indexOf(".");
-                if (index > 15) {
+                if (index > 12) {
                     num1 = null;
                     num2 = null;
                     operator = null;
