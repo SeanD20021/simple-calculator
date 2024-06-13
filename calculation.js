@@ -10,6 +10,31 @@ const equal = document.querySelector(".equal");
 const clear = document.querySelector(".clear");
 const decimal = document.querySelector(".decimal");
 const percent = document.querySelector(".percent");
+const toggle = document.querySelector(".neg");
+
+toggle.addEventListener("click", () => {
+    let number = display.textContent;
+    
+        if (number[0] === "-") {
+            number = number.substring(1);
+            if (num2 === null) {
+                num1 = Number(number);
+
+            }else {
+                num2 = Number(number);
+            }
+            display.textContent = String(number);
+        } else {
+            number = "-" + number;
+            if (num2 === null) {
+                num1 = Number(number);
+
+            }else {
+                num2 = Number(number);
+            }
+            display.textContent = String(number);
+        }
+});
 
 
 percent.addEventListener("click", () => {
@@ -66,8 +91,6 @@ percent.addEventListener("click", () => {
 });
 
 decimal.addEventListener("click", () => {
-        
-    
             if (!display.textContent.includes(".") && num1 === null) {
                 display.textContent = "0.";
                 num1 = Number("0.0");
